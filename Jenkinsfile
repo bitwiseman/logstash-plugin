@@ -26,7 +26,16 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying to Staging Environment'
+        parallel(
+          "Target 1": {
+            echo 'Deploying to Staging Environment'
+            
+          },
+          "Target 2": {
+            echo 'Target 2'
+            
+          }
+        )
       }
     }
   }
