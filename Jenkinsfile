@@ -1,12 +1,22 @@
 node('') {
+  parallel(
+    "Platform 4": {
+      stage('Test2') {
+        echo 'Running Test Platform 1'
+      }
+
+      echo 'Running Test Platform 1'
+    }
+  )
   stage('Build') {
       echo 'Jenkins Build of Plugin'
   }
   stage('Test') {
     parallel(
       "Platform 1": {
-        echo 'Running Test Platform 1'
-
+        stage('Test3') {
+          echo 'Running Test Platform 1'
+        }
       },
       "Platform 2": {
         echo 'Running Tests for Platform 2'
