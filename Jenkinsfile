@@ -1,20 +1,24 @@
 node('') {
   parallel(
     "Platform 4": {
-      stage('Test2.1') {
-        echo 'Running Test Platform 1'
-      }
-      stage('Test2.2') {
-        echo 'Running Test Platform 1'
-      }
+      parallel(
+        "Platform 4.1": {
+          echo 'Running Test Platform 1'
+        },
+        "Platform 4.2": {
+          echo 'Running Test Platform 1'
+        }
+      )
     },
     "Platform 5": {
-      stage('Test2.3') {
-        echo 'Running Test Platform 1'
-      }
-      stage('Test2.4') {
-        echo 'Running Test Platform 1'
-      }
+      parallel(
+        "Platform 5.1": {
+          echo 'Running Test Platform 1'
+        },
+        "Platform 5.2": {
+          echo 'Running Test Platform 1'
+        }
+      )
     }
   )
   stage('Build') {
