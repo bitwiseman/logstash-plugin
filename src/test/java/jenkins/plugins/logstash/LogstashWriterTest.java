@@ -148,7 +148,7 @@ public class LogstashWriterTest {
     verify(mockTestResultAction).getFailCount();
     verify(mockTestResultAction, times(2)).getFailedTests();
 
-    verify(mockProject, times(2)).getName();
+    verify(mockProject, times(3)).getName();
 
     // Verify results
     assertEquals("Results don't match", "", errorBuffer.toString());
