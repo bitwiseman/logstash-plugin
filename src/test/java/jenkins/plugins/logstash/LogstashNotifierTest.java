@@ -46,7 +46,7 @@ public class LogstashNotifierTest {
         } catch (IOException e) {
         }
       }
-      return this.writer;
+      return this.writer
     }
   }
 
